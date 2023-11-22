@@ -4,7 +4,12 @@
 /* eslint-disable eol-last */
 /* eslint-disable linebreak-style */
 /* eslint-disable indent */
-const { addNoteHandler, getAllNotesHandler, getNoteByIdHandler } = require('./handler');
+const {
+    addNoteHandler,
+    getAllNotesHandler,
+    getNoteByIdHandler,
+    editNoteByIdHandler,
+  } = require('./handler');
 const routes = [
     {
         method: 'POST',
@@ -20,6 +25,11 @@ const routes = [
         method: 'GET',
         path: '/notes/{id}',
         handler: getNoteByIdHandler,
+    },
+    {
+        method: 'PUT',
+        path: '/notes/{id}',
+        handler: editNoteByIdHandler,
     },
    ];
 
